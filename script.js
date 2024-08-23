@@ -11,6 +11,7 @@ const handleButtonClick = (event) => {
     document.getElementById(targetId).classList.add('active');
 };
 
+// Set default active section on page load
 const homeButton = document.querySelector('.home');
 homeButton.classList.add('active');
 document.getElementById('home').classList.add('active');

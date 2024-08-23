@@ -15,8 +15,8 @@ body {
 
 .container {
     display: flex;
-    height: 100vh;
     flex-direction: column;
+    min-height: 100vh;
 }
 
 .side-bar {
@@ -107,21 +107,21 @@ body {
 
 .content {
     flex: 1;
-    margin-left: 30%;
+    margin-left: 20%;
     padding: 20px;
-    margin-top: 70px; 
-    overflow-y: auto; 
+    margin-top: 70px;
+    overflow-y: auto;
     display: flex;
-    flex-wrap: wrap; 
-    gap: 20px; 
+    flex-wrap: wrap;
+    gap: 20px;
 }
 
 .section {
-    display: none; 
+    display: none;
 }
 
 .section.active {
-    display: block; 
+    display: block;
 }
 
 .lesson-card {
@@ -141,7 +141,6 @@ body {
     margin-bottom: 10px;
     font-size: 18px;
     font-weight: 500;
-    cursor: pointer;
 }
 
 .lesson-card h1 {
@@ -156,27 +155,23 @@ body {
     padding: 10px;
     margin-bottom: 15px;
     position: relative;
-    overflow: hidden; /* Ensure the progress does not overflow */
-    height: 30px; /* Set a height for the progress bar */
+    height: 30px;
 }
 
 .progress-bar .progress {
-    background-color: #3498db; /* Color for the progress fill */
+    background-color: #3498db;
     border-radius: 10px;
     height: 100%;
     display: flex;
     align-items: center;
     color: #ffffff;
-    padding: 0 10px; /* Add padding inside the progress bar */
-    box-sizing: border-box; /* Ensure padding and borders are included in width */
-    transition: width 0.5s ease-in-out; /* Smooth transition for width changes */
+    padding: 0 10px;
+    transition: width 0.5s ease-in-out;
     position: absolute;
     left: 0;
     top: 0;
     bottom: 0;
-    display: flex;
     justify-content: center;
-    align-items: center;
 }
 
 .progress-bar img {
@@ -221,4 +216,35 @@ body {
 
 .continue-button:hover {
     background-color: #2980b9;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .side-bar {
+        width: 60px;
+    }
+
+    .side-bar a {
+        justify-content: center;
+        padding: 10px;
+    }
+
+    .side-bar a span {
+        display: none; /* Hide text on small screens */
+    }
+
+    .nav-bar {
+        width: calc(100% - 60px);
+        margin-left: 60px;
+    }
+
+    .content {
+        margin-left: 0;
+        padding: 10px;
+        margin-top: 60px;
+    }
+
+    .lesson-card {
+        flex: 1 1 100%;
+    }
 }
